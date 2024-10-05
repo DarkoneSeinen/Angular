@@ -9,4 +9,5 @@ import { Component } from '@angular/core';
 export class personasComponent {
   nombre = 'John Doe';
   edad = 30;
+  id=1110989
 }
