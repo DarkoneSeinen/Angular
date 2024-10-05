@@ -1,0 +1,38 @@
+/* Contenedor principal */
+.persona-container {
+    background-color: #f9f9f9; /* Color de fondo claro */
+    border: 1px solid #ddd; /* Borde suave */
+    border-radius: 8px; /* Bordes redondeados */
+    padding: 20px; /* Espaciado interno */
+    max-width: 400px; /* Ancho máximo */
+    margin: 20px auto; /* Centrado */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Sombra suave */
+    font-family: 'Arial', sans-serif; /* Tipo de fuente */
+  }
+  
+  /* Título */
+  .persona-container h2 {
+    color: #333; /* Color del texto */
+    font-size: 24px; /* Tamaño del texto */
+    margin-bottom: 10px; /* Espaciado inferior */
+  }
+  
+  /* Párrafos */
+  .persona-container p {
+    font-size: 18px; /* Tamaño del texto */
+    color: #555; /* Color del texto */
+    margin: 5px 0; /* Espaciado arriba y abajo */
+  }
+  
+  /* Estilo para resaltar el nombre */
+  .persona-container p.nombre {
+    font-weight: bold; /* Negrita */
+    color: #007BFF; /* Color azul */
+  }
+  
+  /* Estilo para resaltar la edad */
+  .persona-container p.edad {
+    font-style: italic; /* Cursiva */
+    color: #28A745; /* Color verde */
+  }
+  

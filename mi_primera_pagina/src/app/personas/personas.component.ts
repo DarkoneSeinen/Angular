@@ -4,6 +4,7 @@ import { Component } from '@angular/core';
   selector: 'app-persona',
   standalone: true, // Lo defines como standalone
   templateUrl: './personas.component.html',
+  styleUrls:['./personas.component.css']
 })
 
 export class personasComponent {
