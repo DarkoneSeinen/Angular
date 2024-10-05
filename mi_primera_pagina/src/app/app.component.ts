@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
-import { personasComponent } from './personas/personas.component';
+import { personasComponent } from './personas/personas.component'; //se importa el compoente con su ruta de acceso
 
 @Component({
   selector: 'app-root',
