@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { HomeComponent } from './home/home.component';
+import { HousingLocationComponent } from './housing-location/housing-location.component';
 
 @Component({
   standalone: true,
@@ -16,7 +17,7 @@ import { HomeComponent } from './home/home.component';
     </main>
   `,
   styleUrls: ['./app.component.css'],
-  imports:[HomeComponent] 
+  imports:[HomeComponent,HousingLocationComponent] 
 })
 export class AppComponent {
   title = 'homes';

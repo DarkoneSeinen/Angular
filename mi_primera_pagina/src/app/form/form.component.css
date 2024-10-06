@@ -1,0 +1,75 @@
+/* Estilos para el contenedor del formulario */
+.form-container {
+  background-color: #f5f5f5;
+  border-radius: 10px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+  max-width: 400px;
+  margin: 30px auto;
+  padding: 20px;
+  text-align: left;
+  font-family: 'Arial', sans-serif;
+}
+
+/* Estilos para el título del formulario */
+h2 {
+  color: #605DC8;
+  font-size: 24px;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+/* Estilos generales para los inputs y labels */
+label {
+  display: block;
+  color: #333;
+  font-weight: bold;
+  margin-bottom: 8px;
+}
+
+input {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 20px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  font-size: 14px;
+  transition: border 0.3s;
+}
+
+/* Cambia el borde de los inputs cuando están en focus */
+input:focus {
+  border-color: #605DC8;
+  outline: none;
+}
+
+/* Estilo para el botón */
+button {
+  background-color: #605DC8;
+  color: #fff;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 5px;
+  cursor: pointer;
+  width: 100%;
+  font-size: 16px;
+  transition: background-color 0.3s;
+}
+
+button:hover {
+  background-color: #4e49b8;
+}
+
+/* Mensaje de éxito */
+p {
+  color: #28a745;
+  font-weight: bold;
+  text-align: center;
+  font-size: 16px;
+}
+
+/* Para pantallas pequeñas (responsive) */
+@media (max-width: 600px) {
+  .form-container {
+    width: 90%;
+  }
+}

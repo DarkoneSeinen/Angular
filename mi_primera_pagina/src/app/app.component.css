@@ -1,0 +1,17 @@
+h1 {
+    font-size: 32px;
+    color: #605DC8;
+    margin-top: 20px;
+    font-family: 'Arial', sans-serif;
+  }
+  
+  div {
+    text-align: center;
+    margin-top: 50px;
+  }
+  
+  body {
+    background-color: #fafafa;
+    font-family: 'Arial', sans-serif;
+  }
+  
