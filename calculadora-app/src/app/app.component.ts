@@ -1,21 +1,23 @@
 import { Component } from '@angular/core';
 import { FormsModule, NonNullableFormBuilder } from '@angular/forms';
 import { RouterOutlet } from '@angular/router';
+import { FormularioComponent } from './formulario/formulario.component';
+import { ResultadoComponent } from "./resultado/resultado.component";
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, FormsModule],
+  imports: [RouterOutlet, FormsModule, FormularioComponent, ResultadoComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
 export class AppComponent {
-  title = 'apliccacion-caluladora';
-  operandoA: number=0;
-  operandoB: number=0;
-  resultado: number=0;
+  title = 'aplicacion-calculadora';
+  resultadoPadre: number=0;
 
-  sumar(): void{
-    this.resultado=this.operandoA+this.operandoB;
+  procesarResultado(resultado:number){
+    this.resultadoPadre=resultado;
+
   }
+
 }
