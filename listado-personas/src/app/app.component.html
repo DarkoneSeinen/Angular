@@ -4,10 +4,10 @@
   </div>
   <hr/>
 
-  <hr/>
   <app-formulario
     (personaCreada)="personaAgregada($event)"
   ></app-formulario>
+  <hr/>
 
   <app-persona
     *ngFor="let personaElemento of personas; let i=index"
