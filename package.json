@@ -1,9 +1,5 @@
 {
   "dependencies": {
-    "bootstrap": "^5.3.3",
     "jquery": "^3.7.1"
-  },
-  "devDependencies": {
-    "@angular/cli": "^19.1.8"
   }
 }

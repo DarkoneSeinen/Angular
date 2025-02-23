@@ -8,3 +8,27 @@ npm install -g @angular/cli  -- ng version
 
 ng new proyecto
 
+nvm install node
+
+
+bootstrap:
+npm install bootstrap@latest
+popper:
+npm i @popperjs/core --save
+
+
+Styles:
+>>> "node_modules/bootstrap/dist/css/bootstrap.min.css"
+
+Scripts:
+
+>>> 
+"node_modules/jquery/dist/jquery.min.js",
+"node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"
+
+instalar en el proyecto
+npm install jquery
+
+
+
+
