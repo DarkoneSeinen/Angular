@@ -1,0 +1,10 @@
+node:
+
+nvm install node  -- node --version
+
+angular:
+
+npm install -g @angular/cli  -- ng version
+
+ng new proyecto
+
