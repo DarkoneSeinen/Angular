@@ -1,0 +1,12 @@
+<div class="justify-content-center">
+  <div>
+    <label for="inputTexto" class = "mx-2">Mensaje</label>
+    <input id = "inputTexto" type="text" [(ngModel)]="saludo" autocomplete="off" />
+  </div>
+
+  <div class="mb-3">
+    <div class="alert alert-success mt-4 mx-auto 50">
+      {{saludo}}
+    </div>
+  </div>
+</div>
