@@ -1,0 +1,17 @@
+<div class ="container mt-5">
+  <h2 class="text-center">Lista de tareas</h2>
+  <ul class="list-group w-50 mx-auto">
+    @for(tarea of tareas; track tarea){
+      <li class="list-group-item text-center">
+        {{tarea}}
+      </li>
+    }
+  </ul>
+
+  <div class="">
+    <input type="text" #tareaInput class="form-control w-50 mx-auto" placeholder="Escribe una tarea">
+    <button class="btn btn-primary mt-2" (click)="agregarTarea(tareaInput.value); tareaInput.value = ''">
+      Agregar tarea
+    </button>
+  </div>
+</div>
