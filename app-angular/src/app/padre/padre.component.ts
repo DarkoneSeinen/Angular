@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ViewChild } from '@angular/core';
 import { HijoComponent } from './hijo/hijo.component';
 
 @Component({
@@ -9,10 +9,10 @@ import { HijoComponent } from './hijo/hijo.component';
   styleUrl: './padre.component.css'
 })
 export class PadreComponent {
-  mensaje: string = "";
+  @ViewChild(HijoComponent) componenteHijo!: HijoComponent;
 
-  recibirNotificacion(mensajeHijo: string) {
-    this.mensaje = mensajeHijo;
+  cambiarMensajeHijo() {
+    this.componenteHijo.cambiarMensaje('Mensaje cambiado desde el padre');
   }
 
 }
