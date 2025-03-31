@@ -1,4 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
+import { Producto } from '../producto/producto.model';
+
 
 @Component({
   selector: 'app-producto',
@@ -8,6 +10,5 @@ import { Component } from '@angular/core';
   styleUrl: './producto.component.css'
 })
 export class ProductoComponent {
-  descripcion = 'Nuevo Producto';
-  precio = 100.00;
+  @Input() producto!: Producto;
 }
