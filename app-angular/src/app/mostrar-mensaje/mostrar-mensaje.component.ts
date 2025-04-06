@@ -11,13 +11,12 @@ export class MostrarMensajeComponent {
   mensaje: string = '';
 
   mostrarMensaje() {
-    this.mensaje ="Se ha hecho click en el botón";
+    this.mensaje = '¡Hola, has hecho click en el botón!'
   }
 
   resetearMensaje() {
-    // reiniciar el mensaje
+    // Reiniciar el mensaje
     this.mensaje = '';
   }
-
 
 }

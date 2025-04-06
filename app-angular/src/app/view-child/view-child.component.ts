@@ -1,4 +1,4 @@
-import { Component, ViewChild, ElementRef } from '@angular/core';
+import { Component, ElementRef, ViewChild } from '@angular/core';
 
 @Component({
   selector: 'app-view-child',
@@ -8,9 +8,10 @@ import { Component, ViewChild, ElementRef } from '@angular/core';
   styleUrl: './view-child.component.css'
 })
 export class ViewChildComponent {
+
   @ViewChild('referenciaInput') inputElemento!: ElementRef;
 
   cambiarTexto() {
-    this.inputElemento.nativeElement.value = 'Texto cambiado desde el componente padre';
+    this.inputElemento.nativeElement.value = 'Texto Cambiado';
   }
 }

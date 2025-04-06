@@ -9,6 +9,5 @@ import { FormsModule } from '@angular/forms';
   styleUrl: './saludar.component.css'
 })
 export class SaludarComponent {
-  saludo = 'Saludo inicial modificado';
-
+  saludo = 'Saludo inicial';
 }

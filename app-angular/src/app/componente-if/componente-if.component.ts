@@ -8,10 +8,9 @@ import { Component } from '@angular/core';
   styleUrl: './componente-if.component.css'
 })
 export class ComponenteIfComponent {
-
   isAutenticado: boolean = false;
 
-  alternarAutenticacado(): void{
+  alternarAutenticacion(): void{
     this.isAutenticado = !this.isAutenticado;
   }
 }

@@ -8,16 +8,15 @@ import { Component } from '@angular/core';
   styleUrl: './componente-for.component.css'
 })
 export class ComponenteForComponent {
-  tareas :string[] = [
-    "aprender Angular",
-    "aprender TypeScript",
-    "aprender JavaScript",
-  ]
+  tareas: string[] = [
+    'Aprender Angular',
+    'Desarrollar una App',
+    'Aprender TypeScript'
+  ];
 
-  agregarTarea(nuevaTarea: string): void {
-    if (nuevaTarea) {
+  agregarTarea(nuevaTarea: string): void{
+    if(nuevaTarea){
       this.tareas.push(nuevaTarea);
     }
   }
-
 }

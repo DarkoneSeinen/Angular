@@ -1,5 +1,5 @@
 import { Component, ViewChild } from '@angular/core';
-import { HijoComponent } from './hijo/hijo.component';
+import { HijoComponent } from "./hijo/hijo.component";
 
 @Component({
   selector: 'app-padre',
@@ -9,10 +9,10 @@ import { HijoComponent } from './hijo/hijo.component';
   styleUrl: './padre.component.css'
 })
 export class PadreComponent {
+
   @ViewChild(HijoComponent) componenteHijo!: HijoComponent;
 
   cambiarMensajeHijo() {
-    this.componenteHijo.cambiarMensaje('Mensaje cambiado desde el padre');
+    this.componenteHijo.cambiarMensaje('Mensaje actualizado desde el componente Padre');
   }
-
 }

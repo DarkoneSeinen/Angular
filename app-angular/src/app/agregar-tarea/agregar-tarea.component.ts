@@ -10,7 +10,7 @@ import { Component } from '@angular/core';
 export class AgregarTareaComponent {
   tarea: string = '';
 
-  agregarTarea(nuevaTarea: string): void {
+  agregarTarea(nuevaTarea: string): void{
     this.tarea = nuevaTarea;
   }
 
