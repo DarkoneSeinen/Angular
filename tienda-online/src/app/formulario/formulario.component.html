@@ -4,11 +4,11 @@
   (submit)="agregarProducto($event)">
   <input type="text" id="descripcion" name="descripción" placeholder="descripcion del producto" class="form-control me-2 w-75"
   autocomplete="off"
-  #descripcionInput/>
+  [(ngModel)]="descripcionInput"/>
 
   <input type="number" id="precio" name="precio"
   placeholder="precio del producto" class="form-control me-2 w-25"
-  #precioInput/>
+  [(ngModel)]="precioInput"/>
 
   <button type="submit" class="btn btn-primary" >
     Agregar
