@@ -9,10 +9,9 @@ import { Component, Input } from '@angular/core';
   styleUrl: './cabecero.component.css'
 })
 export class CabeceroComponent {
-
-  @Input() presupuestoTotal!: number;
-  @Input() ingresoTotal!: number;
-  @Input() egresoTotal!: number;
-  @Input() porcentajeTotal!: number;
+  @Input() presupuestoTotal!:number;
+  @Input() ingresoTotal!:number;
+  @Input() egresoTotal!:number;
+  @Input() porcentajeTotal!:number;
 
 }

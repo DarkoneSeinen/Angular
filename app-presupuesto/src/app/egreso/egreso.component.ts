@@ -11,20 +11,19 @@ import { CommonModule } from '@angular/common';
   styleUrl: './egreso.component.css'
 })
 export class EgresoComponent {
-
   egresos: Egreso[] = [];
-
   @Input() ingresoTotal!:number;
 
-  constructor(private egresoService: EgresoService) {
-    this.egresos = this.egresoService.egresos;
+  constructor(private egresoServicio: EgresoService){
+    this.egresos = this.egresoServicio.egresos;
   }
 
-  eliminarEgreso(egreso: Egreso) {
-    this.egresoService.eliminar(egreso);
+  eliminarEgreso(egreso: Egreso){
+    this.egresoServicio.eliminar(egreso);
   }
 
-  calcularPorcentaje(egreso: Egreso) {
-    return egreso.valor / this.ingresoTotal;
+  calcularPorcentaje(egreso: Egreso){
+    return egreso.valor/this.ingresoTotal;
   }
+
 }

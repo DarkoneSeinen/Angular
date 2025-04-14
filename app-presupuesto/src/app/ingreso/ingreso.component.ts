@@ -11,15 +11,14 @@ import { CommonModule } from '@angular/common';
   styleUrl: './ingreso.component.css'
 })
 export class IngresoComponent {
+  ingresos: Ingreso[] = [];
 
-  ingresos : Ingreso []= [];
-
-  constructor(private ingresoService: IngresoService) {
-    this.ingresos = this.ingresoService.ingresos;
+  constructor(private ingresoServicio: IngresoService){
+    this.ingresos = this.ingresoServicio.ingresos;
   }
 
   eliminarIngreso(ingreso: Ingreso){
-    this.ingresoService.eliminar(ingreso);
+    this.ingresoServicio.eliminar(ingreso);
   }
 
 }

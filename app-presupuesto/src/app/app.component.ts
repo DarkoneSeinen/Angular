@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
-import { CabeceroComponent } from './cabecero/cabecero.component';
+import { CabeceroComponent } from "./cabecero/cabecero.component";
 import { FormularioComponent } from "./formulario/formulario.component";
 import { IngresoComponent } from "./ingreso/ingreso.component";
 import { EgresoComponent } from "./egreso/egreso.component";
@@ -8,6 +8,7 @@ import { Ingreso } from './ingreso/ingreso.model';
 import { Egreso } from './egreso/egreso.model';
 import { IngresoService } from './ingreso/ingreso.service';
 import { EgresoService } from './egreso/egreso.service';
+
 @Component({
   selector: 'app-root',
   standalone: true,
@@ -16,28 +17,27 @@ import { EgresoService } from './egreso/egreso.service';
   styleUrl: './app.component.css'
 })
 export class AppComponent {
-  title = 'app-presupuesto';
-  ingresos: Ingreso [] = [];
-  egresos: Egreso [] = [];
+  ingresos: Ingreso[]=[];
+  egresos: Egreso[]=[];
 
   constructor(
-    private ingresoService: IngresoService,
+    private ingresoServicio: IngresoService,
     private egresoService: EgresoService
-  ) {
-    this.ingresos = this.ingresoService.ingresos;
+  ){
+    this.ingresos = this.ingresoServicio.ingresos;
     this.egresos = this.egresoService.egresos;
   }
 
-  getIngresoTotal() {
+  getIngresoTotal(){
     let ingresoTotal: number = 0;
-    this.ingresos.forEach(ingreso => {
+    this.ingresos.forEach(ingreso =>{
       ingresoTotal += ingreso.valor;
     });
     return ingresoTotal;
   }
 
-  getEgresoToatal(){
-    let egresoTotal: number = 0;
+  getEgresoTotal(){
+    let egresoTotal:number=0;
     this.egresos.forEach(egreso => {
       egresoTotal += egreso.valor;
     });
@@ -45,10 +45,10 @@ export class AppComponent {
   }
 
   getPorcentajeTotal(){
-    return this.getEgresoToatal() / this.getIngresoTotal();
+    return this.getEgresoTotal()/this.getIngresoTotal();
   }
 
   getPresupuestoTotal(){
-    return this.getIngresoTotal() - this.getEgresoToatal();
+    return this.getIngresoTotal() - this.getEgresoTotal();
   }
 }

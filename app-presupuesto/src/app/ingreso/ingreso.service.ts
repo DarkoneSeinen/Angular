@@ -5,16 +5,14 @@ import { Ingreso } from './ingreso.model';
   providedIn: 'root'
 })
 export class IngresoService {
-
-  constructor() { }
-
-  ingresos: Ingreso[] = [
-    new Ingreso('Salario',4000),
-    new Ingreso('Venta coche',500),
-  ]
+  ingresos: Ingreso[]=[
+    new Ingreso('Salario', 4000),
+    new Ingreso('Venta Coche', 500)
+  ];
 
   eliminar(ingreso: Ingreso){
-    const index = this.ingresos.indexOf(ingreso);
-    this.ingresos.splice(index,1);
+    const indice: number = this.ingresos.indexOf(ingreso);
+    this.ingresos.splice(indice, 1);
   }
+  
 }
