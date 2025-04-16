@@ -1,4 +1,4 @@
-import { EventEmitter, Injectable } from '@angular/core';
+import { Injectable } from '@angular/core';
 import { Producto } from './producto/producto.model';
 
 @Injectable({
@@ -6,17 +6,47 @@ import { Producto } from './producto/producto.model';
 })
 export class ProductoService {
 
-  productos: Producto[] = [
-      new Producto('Pantalón', 130.0),
-      new Producto('Camisa', 80.0),
-      new Producto('Playera', 50.0)
-  ];
+  // Variable para el ID siguiente y unico
+  private idSiguiente = 1;
 
-  constructor() { }
+  productos: Producto[] = [];
 
-  detalleProductoEmmiter = new EventEmitter<Producto>();
-
-  agregarProducto(producto: Producto) {
-    this.productos.push(producto);
+  constructor(){
+    // Inicializamos los productos
+    this.inicializarProductos();
   }
+
+  private inicializarProductos(){
+    const producto1 = new Producto(this.idSiguiente++, 'Pantalón', 130.0);
+    const producto2 = new Producto(this.idSiguiente++, 'Camisa', 80.0);
+    const producto3 = new Producto(this.idSiguiente++, 'Playera', 50.0);
+    // Agregamos al arreglo de productos
+    this.productos.push(producto1, producto2, producto3);
+  }
+
+  guardarProducto(producto: Producto) {
+    if(producto.id === null){
+      // Si el producto no tiene ID, le asignamos uno nuevo
+      producto.id = this.idSiguiente++;
+      this.productos.push(producto);
+    }else{
+      // Si el producto tiene ID, lo actualizamos
+      const index = this.productos.findIndex(p => p.id === producto.id);
+      if(index !== -1){
+        this.productos[index] = producto;
+      }
+    }
+  }
+
+  getProductoById(id: number): Producto | undefined {
+    return this.productos.find(producto => producto.id === id);
+  }
+
+  eliminarProducto(id: number) {
+    const index = this.productos.findIndex(producto => producto.id === id);
+    if(index !== -1){
+      this.productos.splice(index, 1);
+    }
+  }
+
 }
