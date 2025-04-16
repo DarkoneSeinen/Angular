@@ -14,7 +14,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 })
 export class FormularioComponent {
 
-  productoId:number |null = null;
+  llaveProducto:string |null = null;
   descripcionInput: string ="";
   precioInput: number | null = null;
 
@@ -25,11 +25,11 @@ export class FormularioComponent {
 
   ngOnInit(){
     //verificar si carga un producto existente
-    const id= this.route.snapshot.paramMap.get('id');
-    if(id){
-      const producto = this.productoService.getProductoById(Number(id));
+    const llave= this.route.snapshot.paramMap.get('llave');
+    if(llave){
+      const producto = this.productoService.getProductoByLlave(llave);
       if(producto){
-        this.productoId = producto.id;
+        this.llaveProducto = llave;
         this.descripcionInput = producto.descripcion;
         this.precioInput = producto.precio;
 
@@ -46,9 +46,9 @@ export class FormularioComponent {
       return;
     }
 
-    const producto = new Producto(this.productoId, this.descripcionInput, this.precioInput);
+    const producto = new Producto(this.descripcionInput, this.precioInput);
     // Agregar el producto al servicio
-    this.productoService.guardarProducto(producto);
+    this.productoService.guardarProducto(producto, this.llaveProducto);
 
     // Limpiar los campos de entrada
     this.limpiarFormulario();
@@ -63,15 +63,15 @@ export class FormularioComponent {
   }
 
   eliminarProducto() {
-    if (this.productoId !== null) {
-      this.productoService.eliminarProducto(this.productoId);
+    if (this.llaveProducto !== null) {
+      this.productoService.eliminarProducto(this.llaveProducto);
       this.limpiarFormulario();
       this.router.navigate(['/']);
     }
   }
 
   limpiarFormulario() {
-    this.productoId = null;
+    this.llaveProducto = null;
     this.descripcionInput= "";
     this.precioInput = null;
   }
