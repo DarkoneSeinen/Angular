@@ -26,10 +26,13 @@ Scripts:
 
 >>>
 "node_modules/jquery/dist/jquery.min.js",
-"node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"
+"node_modules/bootstrap/dist/js/bootstrap.bundle.min.js",
+"node_modules/bootstrap-icons/font/bootstrap-icons.css"
 
 instalar en el proyecto
 npm install jquery
+
+bootstrap: npm i bootstrap-icons --save
 
 ---produccion con firebase
 ng build --configuration=production --aot
