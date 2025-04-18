@@ -24,12 +24,22 @@ Styles:
 
 Scripts:
 
->>> 
+>>>
 "node_modules/jquery/dist/jquery.min.js",
 "node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"
 
 instalar en el proyecto
 npm install jquery
+
+---produccion con firebase
+ng build --configuration=production --aot
+
+-- npm install -g firebase-tools
+-- firebase init
+
+firebase login --no-localhost
+ID: B082C
+
 
 
 
