@@ -3,7 +3,7 @@ import { ProductoComponent } from '../producto/producto.component';
 import { Producto } from '../producto/producto.model';
 import { FormsModule } from '@angular/forms';
 import { FormularioComponent } from "../formulario/formulario.component";
-import { ProductoService } from '../producto.service';
+import { ProductoService } from '../servicios/producto.service';
 import { Router } from '@angular/router';
 import { Subscription } from 'rxjs';
 

@@ -1,7 +1,7 @@
 import { Component, ElementRef, Output, ViewChild, EventEmitter } from '@angular/core';
 import { Producto } from '../producto/producto.model';
 import { FormsModule } from '@angular/forms';
-import { ProductoService } from '../producto.service';
+import { ProductoService } from '../servicios/producto.service';
 import { ActivatedRoute, Router } from '@angular/router';
 
 

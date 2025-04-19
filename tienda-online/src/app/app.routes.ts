@@ -3,7 +3,7 @@ import { ListadoProductosComponent } from './listado-productos/listado-productos
 import { FormularioComponent } from './formulario/formulario.component';
 import { ErrorComponent } from './error/error.component';
 import { LoginComponent } from './login/login.component';
-import { LoginGuardianService } from './login-guardian.service';
+import { LoginGuardianService } from './servicios/login-guardian.service';
 
 export const routes: Routes = [
   {path: '', component: ListadoProductosComponent, canActivate:[LoginGuardianService]}, // componete que se vera al iniciar la app
