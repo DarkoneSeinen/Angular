@@ -11,5 +11,5 @@ import { PiePaginaComponent } from "./componentes/pie-pagina/pie-pagina.componen
   styleUrl: './app.component.css'
 })
 export class AppComponent {
-  titulo = 'control de clientes';
+  titulo = 'Control de Clientes';
 }

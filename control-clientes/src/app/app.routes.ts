@@ -5,7 +5,7 @@ import { EditarClienteComponent } from './componentes/editar-cliente/editar-clie
 import { NoEncontradoComponent } from './componentes/no-encontrado/no-encontrado.component';
 
 export const routes: Routes = [
-    {path: '', component: TableroComponent},
+    {path: '', component: TableroComponent}, //localhost:4200/
     {path: 'login', component: LoginComponent},
     {path: 'cliente/editar/:id', component: EditarClienteComponent},
     {path: '**', component: NoEncontradoComponent}
