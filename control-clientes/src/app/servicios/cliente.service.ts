@@ -11,7 +11,7 @@ export class ClienteService {
   clientes: Observable<Cliente[]>;
   private clientesRef: any;
 
-  constructor(private firestore: Firestore) {
+  constructor(private firestore: Firestore) { 
     // Realizamos una consulta para obtener el listado de clientes
     this.clientesRef = collection(this.firestore, 'clientes');
     const consulta = query(this.clientesRef, orderBy('nombre', 'asc'));
@@ -26,22 +26,18 @@ export class ClienteService {
     return addDoc(this.clientesRef, cliente);
   }
 
-  getCliente(id: string): Observable<Cliente | null> {
-    // Usamos 'doc' para obtener la referencia al documento y 'docData' para obtener los datos
+  getCliente(id: string): Observable<Cliente | null>{
     const clienteDocRef = doc(this.firestore, `clientes/${id}`);
-    // Retornamos los datos como un Observable
-    return docData(clienteDocRef, { idField: 'id' }) as Observable<Cliente>;
+    return docData(clienteDocRef, {idField: 'id'}) as Observable<Cliente>;
   }
 
   modificarCliente(cliente: Cliente){
-    const clienteDoc= doc(this.firestore, `clientes/${cliente.id}`);
+    const clienteDoc = doc(this.firestore, `clientes/${cliente.id}`);
     return updateDoc(clienteDoc, {...cliente});
   }
 
   eliminarCliente(cliente: Cliente){
-    const clienteDoc= doc(this.firestore, `clientes/${cliente.id}`);
+    const clienteDoc = doc(this.firestore, `clientes/${cliente.id}`);
     return deleteDoc(clienteDoc);
   }
-
-
 }

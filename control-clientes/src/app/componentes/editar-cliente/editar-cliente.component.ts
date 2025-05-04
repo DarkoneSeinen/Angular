@@ -12,8 +12,7 @@ import { FormsModule, NgForm } from '@angular/forms';
   styleUrl: './editar-cliente.component.css'
 })
 export class EditarClienteComponent {
-
-  cliente: Cliente ={
+  cliente: Cliente = {
     nombre: '',
     apellido: '',
     email: '',
@@ -26,52 +25,39 @@ export class EditarClienteComponent {
     private clienteServicio: ClienteService,
     private router: Router,
     private route: ActivatedRoute
-  ){
-
-  }
+  ) { }
 
   ngOnInit() {
-    // Obtener el 'id' del parámetro de ruta
     this.id = this.route.snapshot.paramMap.get('id');
-
-    // Verificar si el 'id' no es null antes de buscar el cliente
     if (this.id) {
       this.clienteServicio.getCliente(this.id).subscribe((cliente: Cliente | null) => {
         if (cliente) {
-          // Asignar el cliente si existe
           this.cliente = cliente;
         } else {
           console.log('Cliente no encontrado: ' + this.id);
-          // Redirigir al inicio si no se encuentra el cliente
           this.router.navigate(['/']);
         }
       });
     } else {
       console.log('ID no proporcionado');
-      // Redirigir al inicio si no hay ID
       this.router.navigate(['/']);
     }
   }
 
   guardar(clienteForm: NgForm) {
-    const { value, valid } = clienteForm;
-
-    if (valid) {
+    const {value, valid} = clienteForm;
+    if(valid){
       value.id = this.id;
-      //Modificar cliente
       this.clienteServicio.modificarCliente(value);
       this.router.navigate(['/']);
     }
   }
 
   eliminar() {
-    //metodo para eliminar cliente
-    if (confirm('¿Seguro que desea eliminar el cliente?')) {
+    if(confirm('¿Seguro que deseas eliminar el cliente?')){
       this.clienteServicio.eliminarCliente(this.cliente);
       this.router.navigate(['/']);
     }
   }
-
-
 
 }

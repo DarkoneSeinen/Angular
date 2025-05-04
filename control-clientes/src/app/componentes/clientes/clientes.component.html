@@ -35,7 +35,7 @@
                              @for(cliente of clientes; track cliente){
                                 <tr>
                                     <td>{{cliente.nombre}} {{cliente.apellido}}</td>
-                                    <td>{{cliente.saldo | currency: 'USD':'$':'1.2-2'}}</td>
+                                    <td>{{cliente.saldo | currency: 'MNX':'$'}}</td>
                                     <td>
                                         <a routerLink="/cliente/editar/{{cliente.id}}"
                                             class="btn btn-secondary">
@@ -93,7 +93,7 @@
                             Nombre
                         </label>
                         <div class="col-sm-9">
-                            <input type="text" id="nombre" name="nombre" class="form-control"
+                            <input type="text" id="nombre" name="nombre" class="form-control" 
                             required minlength="2" [(ngModel)]="cliente.nombre" #nombre="ngModel" />
                             @if(nombre.invalid && nombre.touched){
                                 <div class="text-danger">
@@ -116,7 +116,7 @@
                                 </div>
                             }
                         </div>
-                     </div>
+                     </div> 
                       <!-- Campo email -->
                       <div class="d-flex align-items-center mb-3">
                         <label for="email" class="form-label me-3" style="min-width: 100px">
@@ -131,7 +131,7 @@
                                 </div>
                             }
                         </div>
-                     </div>
+                     </div> 
                       <!-- Campo saldo -->
                       <div class="d-flex align-items-center mb-3">
                         <label for="saldo" class="form-label me-3" style="min-width: 100px">
@@ -146,14 +146,15 @@
                                 </div>
                             }
                         </div>
-                     </div>
+                     </div> 
+                     
                 </div>
                 <!-- Footer del modal con el boton de guardar -->
                 <div class="modal-footer">
                     <button type="submit" class="btn btn-primary"
                         [disabled]="clienteForm.invalid"
                     >Guardar</button>
-                </div>
+                </div> 
             </form>
         </div>
     </div>
