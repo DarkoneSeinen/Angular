@@ -26,21 +26,22 @@ export class ClientesComponent {
   constructor(private clienteServicio: ClienteService) { }
 
   ngOnInit() {
-    this.clienteServicio.getClientes().subscribe(clientes => {
+    this.clienteServicio.getClientes().subscribe((clientes) => {
+      console.log('Clientes obtenidos:', clientes); //testeo pa ver si suma
       this.clientes = clientes;
     });
   }
 
   getSaldoTotal(): number {
-    return this.clientes?.reduce((total, cliente) => total + (cliente.saldo ?? 0), 0) ?? 0;
+    return this.clientes?.reduce((total, cliente) => total + (Number(cliente.saldo) || 0), 0) ?? 0; // funcion ajustada para que se sume y  no se detectte como string
   }
 
   agregar(clienteForm: NgForm) {
     const {value, valid} = clienteForm;
     if(valid){
-      // Agregamos la logica para guardar el cliente
+      //Agregamos la logica para guardar el cliente
       this.clienteServicio.agregarCliente(value);
-      // Limpiamos el formulario
+      //Limpiamos el formulario
       clienteForm.resetForm();
       this.cerrarModal();
     }

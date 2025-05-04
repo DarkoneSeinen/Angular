@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { Cliente } from '../modelo/cliente.modelo';
 import { Observable } from 'rxjs';
 import { collection, collectionData, docData, Firestore, orderBy, query } from '@angular/fire/firestore';
-import { addDoc, doc } from 'firebase/firestore';
+import { addDoc, deleteDoc, doc, updateDoc } from 'firebase/firestore';
 
 @Injectable({
   providedIn: 'root'
@@ -31,6 +31,16 @@ export class ClienteService {
     const clienteDocRef = doc(this.firestore, `clientes/${id}`);
     // Retornamos los datos como un Observable
     return docData(clienteDocRef, { idField: 'id' }) as Observable<Cliente>;
+  }
+
+  modificarCliente(cliente: Cliente){
+    const clienteDoc= doc(this.firestore, `clientes/${cliente.id}`);
+    return updateDoc(clienteDoc, {...cliente});
+  }
+
+  eliminarCliente(cliente: Cliente){
+    const clienteDoc= doc(this.firestore, `clientes/${cliente.id}`);
+    return deleteDoc(clienteDoc);
   }
 
 

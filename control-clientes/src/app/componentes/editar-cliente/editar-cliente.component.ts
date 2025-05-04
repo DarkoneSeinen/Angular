@@ -1,12 +1,13 @@
 import { Component } from '@angular/core';
 import { Cliente } from '../../modelo/cliente.modelo';
 import { ClienteService } from '../../servicios/cliente.service';
-import { ActivatedRoute, Router } from '@angular/router';
+import { ActivatedRoute, Router, RouterModule } from '@angular/router';
+import { FormsModule, NgForm } from '@angular/forms';
 
 @Component({
   selector: 'app-editar-cliente',
   standalone: true,
-  imports: [],
+  imports: [FormsModule, RouterModule],
   templateUrl: './editar-cliente.component.html',
   styleUrl: './editar-cliente.component.css'
 })
@@ -51,6 +52,26 @@ export class EditarClienteComponent {
       this.router.navigate(['/']);
     }
   }
+
+  guardar(clienteForm: NgForm) {
+    const { value, valid } = clienteForm;
+
+    if (valid) {
+      value.id = this.id;
+      //Modificar cliente
+      this.clienteServicio.modificarCliente(value);
+      this.router.navigate(['/']);
+    }
+  }
+
+  eliminar() {
+    //metodo para eliminar cliente
+    if (confirm('¿Seguro que desea eliminar el cliente?')) {
+      this.clienteServicio.eliminarCliente(this.cliente);
+      this.router.navigate(['/']);
+    }
+  }
+
 
 
 }
