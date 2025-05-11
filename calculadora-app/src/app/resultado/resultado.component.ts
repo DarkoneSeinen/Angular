@@ -1,9 +1,10 @@
 import { Component, Input } from '@angular/core';
+import { PanelModule } from 'primeng/panel';
 
 @Component({
   selector: 'app-resultado',
   standalone: true,
-  imports: [],
+  imports: [PanelModule],
   templateUrl: './resultado.component.html',
   styleUrl: './resultado.component.css'
 })
