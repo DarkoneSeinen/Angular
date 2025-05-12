@@ -1,15 +1,5 @@
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-  <div class="container">
-    <!-- Título de la barra -->
-    <a class="navbar-brand">Calculadora</a>
-
-    <!-- Menú a la derecha -->
-    <ul class="navbar-nav ms-auto">
-      <li class="nav-item px-2">
-        <a class="nav-link" style="cursor: pointer" (click)="resta()">
-          <i class="bi bi-dash-circle"></i> Restar
-        </a>
-      </li>
-    </ul>
-  </div>
-</nav>
+<p-menubar [model]="items">
+  <ng-template pTemplate="start">
+    <a class="navbar-brand text-white" [routerLink]="['/']">Calculadora</a>
+  </ng-template>
+</p-menubar>

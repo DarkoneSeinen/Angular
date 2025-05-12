@@ -1,13 +1,11 @@
 
-<div class="container mt-5">
-
-  <div class="d-flex justify-content-center">
     <div >
       <app-formulario (resultadoSuma)="procesarResultado($event)"/>
       <br/>
-      <app-resultado [resultadoHijo]="resultadoPadre"/>
+      <div class=" text-center">
+        <app-resultado [resultadoHijo]="resultadoPadre"/>
+      </div>
     </div>
 
-  </div>
 
-</div>
+

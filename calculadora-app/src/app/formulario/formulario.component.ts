@@ -3,12 +3,13 @@ import { FormsModule } from '@angular/forms';
 import { ButtonModule } from 'primeng/button';
 import { InputTextModule } from 'primeng/inputtext';
 import { FloatLabelModule } from 'primeng/floatlabel';
+import { PanelModule } from 'primeng/panel';
 
 
 @Component({
   selector: 'app-formulario',
   standalone: true,
-  imports: [FormsModule, ButtonModule, InputTextModule, FloatLabelModule],
+  imports: [FormsModule, ButtonModule, InputTextModule, FloatLabelModule, PanelModule],
   templateUrl: './formulario.component.html',
   styleUrl: './formulario.component.css'
 })
@@ -16,6 +17,7 @@ export class FormularioComponent {
 
   operandoA: number | null = null;
   operandoB: number | null = null;
+  resultado: number | null = null;
 
   @Output() resultadoSuma = new EventEmitter<number>();
 

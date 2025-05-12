@@ -4,6 +4,7 @@ import { FormularioComponent } from "../formulario/formulario.component";
 import { ResultadoComponent } from '../resultado/resultado.component';
 import { NavBarComponent } from "../nav-bar/nav-bar.component";
 
+
 @Component({
   selector: 'app-calculadora',
   standalone: true,
