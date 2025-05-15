@@ -18,7 +18,7 @@ export class NavBarComponent {
       {
         label: 'Sumar',
         icon: 'pi pi-home',
-        routerLink: ['/']
+        routerLink: ['/suma']
       },
       {
         label: 'Resta',

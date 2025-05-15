@@ -16,7 +16,7 @@ export class CalculadoraComponent {
   resultadoPadre: number = 0;
 
   procesarResultado(resultadoHijo: number){
-    this.resultadoPadre = resultadoHijo;
+    this.resultadoPadre = resultadoHijo; 
   }
 
 
