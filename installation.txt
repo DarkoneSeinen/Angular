@@ -34,7 +34,7 @@ npm install jquery
 
 bootstrap: npm i bootstrap-icons --save
 
----produccion con firebase
+---produccion con firebase (bd no relacional)
 ng build --configuration=production --aot
 
 -- npm install -g firebase-tools
